@@ -22,10 +22,10 @@ const loginController = async (req, res) => {
     res.cookie('token', token, {
         httpOnly: true, // prevent cross site scripting attack
         secure: true,
-        sameSite: 'strict', //  prevent cross site request foregegy attack
+        sameSite: 'none',     // allow cross-site cookie
         maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
         });
-    console.log('token', token);
+    // console.log('token', token);
     return res.status(200).json({ message: 'Login successful', user: userExist });
 
   } catch (err) {
