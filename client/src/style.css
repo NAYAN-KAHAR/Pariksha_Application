@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+
+html, body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    overflow-x: hidden;
+    height: 100%;
+    background-color: rgb(255, 252, 249);
+}
+
+.quiz-head {
+    margin-top: 1rem;
+    margin-bottom: 1rem
+}
+.centered {
+    margin-left: auto;
+    margin-right: auto;
+}
+.timer-div {
+  
+    margin-left: 2rem
+}
+
+.hero-img {
+    margin-top: 0.2rem;
+}
+
+.progressbar {
+    padding-top: 3rem ;
+}
+.test-div {
+    padding-top: 6rem;
+}
