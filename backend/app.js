@@ -18,7 +18,7 @@ const port = 3000;
 
 app.use(express.json());
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: 'https://jovial-axolotl-4615e1.netlify.app',
   credentials: true,
 }));
 
