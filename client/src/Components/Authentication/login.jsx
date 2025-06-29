@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ModalContext } from '../context/userContext';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
+import { backedUrl } from '../Constant';
 
 const FormPage = () => {
     const [name, setName] = useState();
@@ -19,9 +20,9 @@ const FormPage = () => {
          try{
             let res;
             if(!name){
-                res = await axios.post(`https://pariksha-application-2.onrender.com/api/login`, { email, password},{ withCredentials: true });
+                res = await axios.post(`backedUrl/api/login`, { email, password},{ withCredentials: true });
             }else{
-                res = await axios.post(`https://pariksha-application-2.onrender.com/api/signup`, {name, email, password},{ withCredentials: true });
+                res = await axios.post(`backedUrl/api/signup`, {name, email, password},{ withCredentials: true });
             }
             
             // console.log(res.data);

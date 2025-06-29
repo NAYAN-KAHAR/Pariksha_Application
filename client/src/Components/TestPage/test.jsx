@@ -21,7 +21,7 @@ const TestPage = () => {
     const getCategoryQuestions = async () => {
     
         try {
-            const response = await axios.get(`backedUrl/${id}`);
+            const response = await axios.get(`backedUrl/api/quiz/${id}`);
             setQuestions(response.data);
             // console.log(response.data);
             setIsTimerRunning(true);

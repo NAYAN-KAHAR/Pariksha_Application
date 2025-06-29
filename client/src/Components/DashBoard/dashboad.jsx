@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
+import { backedUrl } from "../Constant";
 
 const DashBoard = () => {
   const [questions, setQuestions] = useState([]);
@@ -11,10 +12,10 @@ const DashBoard = () => {
   useEffect(() => {
     const fetchquestion = async () => {
         try{
-            const response = await axios.get(`backedUrl/${id}`);
+            const response = await axios.get(`backedUrl/api/quiz/${id}`);
             setQuestions(response.data);
         }catch(err){
-            console.log(err);
+            console.log(err)
         }
     }
     if(id) fetchquestion();
