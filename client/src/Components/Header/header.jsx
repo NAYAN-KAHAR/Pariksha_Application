@@ -1,6 +1,6 @@
 
 import { useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import FormPage from '../Authentication/login';
 import { ModalContext  } from '../context/userContext';
 import axios from 'axios';
@@ -9,16 +9,18 @@ import { ToastContainer, toast } from 'react-toastify';
 const Header = () => {
     const[isRefresh, setIsRefresh] = useState(false);
 
+    const naviagte = useNavigate();
     const modal = useContext(ModalContext);
     const quizeUser = localStorage?.getItem('quizeUser')?.split(' ')[0];
 
     const logoutHandle = async () => {
         try{
-            const res = await axios.post('http://localhost:3000/api/logout', {}, { withCredentials: true });
+            const res = await axios.post('https://pariksha-application-2.onrender.com/api/logout', {}, { withCredentials: true });
             console.log(res.data);
             localStorage.removeItem('quizeUser');
             toast.success('logout user successfully');
             setIsRefresh(!isRefresh);
+            naviagte('/');
         }catch(err){
             console.log(err)
         }

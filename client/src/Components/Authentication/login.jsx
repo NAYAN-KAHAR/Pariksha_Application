@@ -19,9 +19,9 @@ const FormPage = () => {
          try{
             let res;
             if(!name){
-                res = await axios.post(`http://localhost:3000/api/login`, { email, password},{ withCredentials: true });
+                res = await axios.post(`https://pariksha-application-2.onrender.com/api/login`, { email, password},{ withCredentials: true });
             }else{
-                res = await axios.post(`http://localhost:3000/api/signup`, {name, email, password},{ withCredentials: true });
+                res = await axios.post(`https://pariksha-application-2.onrender.com/api/signup`, {name, email, password},{ withCredentials: true });
             }
             
             // console.log(res.data);
@@ -38,7 +38,8 @@ const FormPage = () => {
             }
 
          }catch(err){
-            console.log(err)
+            console.log(err);
+             toast.error(err.response.data.error);
          }
     
     }

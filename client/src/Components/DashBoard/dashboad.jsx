@@ -11,10 +11,10 @@ const DashBoard = () => {
   useEffect(() => {
     const fetchquestion = async () => {
         try{
-            const response = await axios.get(`http://localhost:3000/api/quiz/${id}`);
+            const response = await axios.get(`backedUrl/${id}`);
             setQuestions(response.data);
         }catch(err){
-            console.log(err)
+            console.log(err);
         }
     }
     if(id) fetchquestion();

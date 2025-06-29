@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from 'react-router-dom';
+import { backedUrl } from "../Constant";
 
 const TestPage = () => {
     const [questions, setQuestions] = useState([]); // all questions will store here
@@ -20,7 +21,7 @@ const TestPage = () => {
     const getCategoryQuestions = async () => {
     
         try {
-            const response = await axios.get(`http://localhost:3000/api/quiz/${id}`);
+            const response = await axios.get(`backedUrl/${id}`);
             setQuestions(response.data);
             // console.log(response.data);
             setIsTimerRunning(true);
@@ -39,6 +40,7 @@ const TestPage = () => {
     }, []); 
 
   
+    
     
     // Handle option rendering
     const handleOption = (options) => {
@@ -160,7 +162,7 @@ const TestPage = () => {
 
                     <div className="lg:w-1/4 md:w-1/5 sm:w-1/6">
                         <div className="lg:mt-5 w-20 h-20 timer-div centered flex flex-col lg:flex-row md:flex-row  items-center justify-center
-                         bg-gray-700 lg:w-45 lg:h-45 md:w-40 md:h-40 sm:w-27 sm:h-27  rounded-[50%] ">
+                         bg-gray-700 lg:w-45 lg:h-45 md:w-40 md:h-40 sm:w-25 sm:h-25  rounded-[50%] ">
                             <p className="text-white text-sm lg:text-xl md:text-xl font-bold m-2">{minutes} Min</p>
                             <p className="text-white text-sm lg:text-xl md:text-xl font-bold">{seconds} Sec</p>
                         </div>
