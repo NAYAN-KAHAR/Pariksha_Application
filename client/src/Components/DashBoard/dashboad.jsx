@@ -12,7 +12,7 @@ const DashBoard = () => {
   useEffect(() => {
     const fetchquestion = async () => {
         try{
-            const response = await axios.get(`backedUrl/api/quiz/${id}`);
+            const response = await axios.get(`https://pariksha-application-2.onrender.com/api/quiz/${id}`);
             setQuestions(response.data);
         }catch(err){
             console.log(err)

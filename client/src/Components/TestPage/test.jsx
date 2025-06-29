@@ -21,7 +21,7 @@ const TestPage = () => {
     const getCategoryQuestions = async () => {
     
         try {
-            const response = await axios.get(`backedUrl/api/quiz/${id}`);
+            const response = await axios.get(`https://pariksha-application-2.onrender.com/api/quiz/${id}`);
             setQuestions(response.data);
             // console.log(response.data);
             setIsTimerRunning(true);

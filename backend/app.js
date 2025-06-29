@@ -17,7 +17,7 @@ const port = 3000;
 // This is the CORS middleware, which helps manage Cross-Origin Resource Sharing — a security feature enforced by browsers that blocks requests from different origins unless explicitly allowed.
 
 app.use(cors({
-  origin: 'https://vermillion-tulumba-fe1f77.netlify.app',
+  origin: 'https://dulcet-rolypoly-925576.netlify.app',
   credentials: true,
 }));
 app.options('*', cors()); // ✅ allow preflight requests
